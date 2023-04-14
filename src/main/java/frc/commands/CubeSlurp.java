@@ -11,12 +11,14 @@ import frc.robot.subsystems.IntakeSubsystem;
 public class CubeSlurp extends CommandBase {
 
   private IntakeSubsystem INTAKE_SUBSYSTEM;
+  private double intakeSpeed;
 
   /** Creates a new CubeSlurp. */
-  public CubeSlurp(IntakeSubsystem intake) {
+  public CubeSlurp(IntakeSubsystem intake, double speed) {
     // Use addRequirements() here to declare subsystem dependencies.
 
     this.INTAKE_SUBSYSTEM = intake;
+    this.intakeSpeed = speed;
 
     addRequirements(INTAKE_SUBSYSTEM);
   }
@@ -29,7 +31,7 @@ public class CubeSlurp extends CommandBase {
   @Override
   public void execute() {
     if (INTAKE_SUBSYSTEM.distanceSensor.get()) {
-      INTAKE_SUBSYSTEM.set(IntakeConstants.SLURP_SPEED);
+      INTAKE_SUBSYSTEM.set(intakeSpeed);
     } else {
       INTAKE_SUBSYSTEM.set(0);
     }

@@ -11,12 +11,14 @@ import frc.robot.subsystems.IntakeSubsystem;
 public class CubeDrool extends CommandBase {
 
   private IntakeSubsystem INTAKE_SUBSYSTEM;
+  private double intakeSpeed;
 
   /** Creates a new CubeDrool. */
-  public CubeDrool(IntakeSubsystem intake) {
+  public CubeDrool(IntakeSubsystem intake, double speed) {
     // Use addRequirements() here to declare subsystem dependencies.
 
     this.INTAKE_SUBSYSTEM = intake;
+    this.intakeSpeed = speed;
 
     addRequirements(INTAKE_SUBSYSTEM);
   }
@@ -28,7 +30,7 @@ public class CubeDrool extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    INTAKE_SUBSYSTEM.set(IntakeConstants.DROOL_SPEED); 
+    INTAKE_SUBSYSTEM.set(intakeSpeed); 
   }
 
   // Called once the command ends or is interrupted.
