@@ -145,6 +145,7 @@ public class RobotContainer {
       final HashMap<String, Command> AllianceAutoEventMap = new HashMap<>();
 
       final HashMap<String, Command> BlueChargeStationEventMap = new HashMap<>();
+      BlueChargeStationEventMap.put("BCSinitspit", new CubeSpit(m_intakeSubsystem, IntakeConstants.AUTO_SPIT_SPEED));
       BlueChargeStationEventMap.put("BCSdroppivot", new PivotIntakePos(m_ArmSubsystem2, ArmConstants.MIN_SETPOINT));
       BlueChargeStationEventMap.put("BCSslurp", new CubeSlurp(m_intakeSubsystem, IntakeConstants.AUTO_SLURP_SPEED));
       BlueChargeStationEventMap.put("BCSraisepivot", new PivotStartPos(m_ArmSubsystem2, ArmConstants.MAX_SETPOINT));
@@ -201,30 +202,41 @@ public class RobotContainer {
       RedRightWorldsEventMap.put("RRWraisepivotpt3", new PivotStartPos(m_ArmSubsystem2, ArmConstants.MAX_SETPOINT));
 
       final HashMap<String, Command> BlueAutoEventMap = new HashMap<>();
+      BlueAutoEventMap.put("BAinitspit", new CubeSpit(m_intakeSubsystem, IntakeConstants.AUTO_SPIT_SPEED));
       BlueAutoEventMap.put("BAlowerpivot", new PivotIntakePos(m_ArmSubsystem2, ArmConstants.MIN_SETPOINT));
       BlueAutoEventMap.put("BAslurp", new CubeSlurp(m_intakeSubsystem, IntakeConstants.AUTO_SLURP_SPEED));
       BlueAutoEventMap.put("BAraisepivot", new PivotStartPos(m_ArmSubsystem2, ArmConstants.MAX_SETPOINT));
       BlueAutoEventMap.put("BAspit", new CubeSpit(m_intakeSubsystem, IntakeConstants.AUTO_SPIT_SPEED));
 
-      autoChooser.addOption("BackupAndBalance", AutoPathHelper.followPath(swerve, "BackupAndBalance", backupAndBalanceEventMap)
+      final HashMap<String, Command> BlueAutoCopyEventMap = new HashMap<>();
+      BlueAutoCopyEventMap.put("BACinitspit", new CubeSpit(m_intakeSubsystem, IntakeConstants.AUTO_SPIT_SPEED));
+      BlueAutoCopyEventMap.put("BAClowerpivot", new PivotIntakePos(m_ArmSubsystem2, ArmConstants.MIN_SETPOINT));
+      BlueAutoCopyEventMap.put("BACslurp", new CubeSlurp(m_intakeSubsystem, IntakeConstants.AUTO_SLURP_SPEED));
+      BlueAutoCopyEventMap.put("BACraisepivot", new PivotStartPos(m_ArmSubsystem2, ArmConstants.MAX_SETPOINT));
+      BlueAutoCopyEventMap.put("BACscoringpos", new PivotScoringPos(m_ArmSubsystem2, ArmConstants.SCORING_SETPOINT));
+      BlueAutoCopyEventMap.put("BACspit", new CubeSpit(m_intakeSubsystem, IntakeConstants.AUTO_SPEW_SPEED));
+
+      // autoChooser.addOption("BackupAndBalance", AutoPathHelper.followPath(swerve, "BackupAndBalance", backupAndBalanceEventMap)
+      // .andThen(new AutoBalance(swerve)));
+
+      // autoChooser.addOption("AllianceAuto", AutoPathHelper.followPath(swerve, "AllianceAuto", AllianceAutoEventMap));
+
+      autoChooser.addOption("WorldsChargeStation", AutoPathHelper.followPath(swerve, "WorldsChargeStation", BlueChargeStationEventMap)
       .andThen(new AutoBalance(swerve)));
 
-      autoChooser.addOption("AllianceAuto", AutoPathHelper.followPath(swerve, "AllianceAuto", AllianceAutoEventMap));
+      // autoChooser.addOption("BlueWireWorlds", AutoPathHelper.followPath(swerve, "BlueWireWorlds", BlueLeftWorldsEventMap));
 
-      autoChooser.addOption("BlueChargeStation", AutoPathHelper.followPath(swerve, "BlueChargeStation", BlueChargeStationEventMap)
-      .andThen(new AutoBalance(swerve)));
+      // autoChooser.addOption("BlueRightWorlds", AutoPathHelper.followPath(swerve, "BlueRightWorlds", BlueRightWorldsEventMap));
 
-      autoChooser.addOption("BlueWireWorlds", AutoPathHelper.followPath(swerve, "BlueWireWorlds", BlueLeftWorldsEventMap));
+      // autoChooser.addOption("BlueAuto", AutoPathHelper.followPath(swerve, "BlueAuto", BlueAutoEventMap));
 
-      autoChooser.addOption("BlueRightWorlds", AutoPathHelper.followPath(swerve, "BlueRightWorlds", BlueRightWorldsEventMap));
+      autoChooser.addOption("TheOneThatWorks", AutoPathHelper.followPath(swerve, "TheOneThatWorks", BlueAutoCopyEventMap));
 
-      autoChooser.addOption("BlueAuto", AutoPathHelper.followPath(swerve, "BlueAuto", BlueAutoEventMap));
+      // autoChooser.addOption("RedChargeStation", AutoPathHelper.followPath(swerve, "RedChargeStation", RedChargeStationEventMap));
 
-      autoChooser.addOption("RedChargeStation", AutoPathHelper.followPath(swerve, "RedChargeStation", RedChargeStationEventMap));
+      // autoChooser.addOption("RedLeftWorlds", AutoPathHelper.followPath(swerve, "RedLeftWorlds", RedLeftWorldsEventMap));
 
-      autoChooser.addOption("RedLeftWorlds", AutoPathHelper.followPath(swerve, "RedLeftWorlds", RedLeftWorldsEventMap));
-
-      autoChooser.addOption("RedRightWorlds", AutoPathHelper.followPath(swerve, "RedRightWorlds", RedRightWorldsEventMap));
+      // autoChooser.addOption("RedRightWorlds", AutoPathHelper.followPath(swerve, "RedRightWorlds", RedRightWorldsEventMap));
 
       SmartDashboard.putData(autoChooser);
   }

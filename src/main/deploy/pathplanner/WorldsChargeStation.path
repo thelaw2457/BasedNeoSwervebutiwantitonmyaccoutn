@@ -7,8 +7,8 @@
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.857570843346815,
-        "y": 3.2773012554572123
+        "x": 2.8575746205071786,
+        "y": 3.2750499705274954
       },
       "holonomicAngle": 0,
       "isReversal": false,
@@ -24,19 +24,19 @@
     },
     {
       "anchorPoint": {
-        "x": 2.2523549320602916,
+        "x": 2.2751932683352547,
         "y": 3.2658820873197305
       },
       "prevControl": {
-        "x": 1.9999748085351987,
-        "y": 3.280162828470287
+        "x": 2.6177683124597015,
+        "y": 3.271591671388471
       },
       "nextControl": {
-        "x": 1.9999748085351987,
-        "y": 3.280162828470287
+        "x": 1.9326182242108074,
+        "y": 3.26017250325099
       },
       "holonomicAngle": 0,
-      "isReversal": true,
+      "isReversal": false,
       "velOverride": null,
       "isLocked": false,
       "isStopPoint": false,
@@ -74,39 +74,12 @@
     },
     {
       "anchorPoint": {
-        "x": 6.3975129659661025,
-        "y": 2.4551211495585377
+        "x": 3.8624576394451937,
+        "y": 3.33
       },
       "prevControl": {
-        "x": 6.382648072667432,
-        "y": 2.4902279715536535
-      },
-      "nextControl": {
-        "x": 6.412377859264773,
-        "y": 2.420014327563422
-      },
-      "holonomicAngle": 0.0,
-      "isReversal": false,
-      "velOverride": null,
-      "isLocked": false,
-      "isStopPoint": false,
-      "stopEvent": {
-        "names": [
-          "BCSspitpt2"
-        ],
-        "executionBehavior": "parallel",
-        "waitBehavior": "none",
-        "waitTime": 0
-      }
-    },
-    {
-      "anchorPoint": {
-        "x": 3.9081343119951195,
-        "y": 2.375186972596168
-      },
-      "prevControl": {
-        "x": 3.9097758028312675,
-        "y": 2.4010996350910427
+        "x": 3.8640991302813417,
+        "y": 3.355912662494875
       },
       "nextControl": null,
       "holonomicAngle": 0,
@@ -126,16 +99,22 @@
   ],
   "markers": [
     {
-      "position": 1.4836363636363035,
+      "position": 1.527272727272739,
       "names": [
         "BCSdroppivot",
         "BCSslurp"
       ]
     },
     {
-      "position": 2.210909090909081,
+      "position": 2.4000000000000057,
       "names": [
         "BCSraisepivot"
+      ]
+    },
+    {
+      "position": 0.02909090909090747,
+      "names": [
+        "BCSinitspit"
       ]
     }
   ]
