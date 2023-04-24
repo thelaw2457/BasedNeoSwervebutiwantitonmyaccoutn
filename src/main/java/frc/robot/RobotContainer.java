@@ -119,6 +119,8 @@ public class RobotContainer {
       new JoystickButton(xbox, 5).whileTrue(new PivotIntakePos(m_ArmSubsystem2, ArmConstants.MIN_SETPOINT));
       new JoystickButton(xbox, 7).whileTrue(new PivotScoringPos(m_ArmSubsystem2, ArmConstants.SCORING_SETPOINT));
       new JoystickButton(xbox, 6).whileTrue(new PivotStartPos(m_ArmSubsystem2, ArmConstants.MAX_SETPOINT));
+      new JoystickButton(driver, 5).whileTrue(new PivotStartPos(m_ArmSubsystem2, ArmConstants.MAX_SETPOINT));
+      new JoystickButton(driver, 3).whileTrue(new PivotIntakePos(m_ArmSubsystem2, ArmConstants.MIN_SETPOINT));
     }
 
     private String getMode() {
@@ -216,6 +218,20 @@ public class RobotContainer {
       BlueAutoCopyEventMap.put("BACscoringpos", new PivotScoringPos(m_ArmSubsystem2, ArmConstants.SCORING_SETPOINT));
       BlueAutoCopyEventMap.put("BACspit", new CubeSpit(m_intakeSubsystem, IntakeConstants.AUTO_SPEW_SPEED));
 
+      final HashMap<String, Command> RedWorldsEventMap = new HashMap<>();
+      RedWorldsEventMap.put("RWinitspit", new CubeSpit(m_intakeSubsystem, IntakeConstants.AUTO_SPIT_SPEED));
+      RedWorldsEventMap.put("RWlowerpivot", new PivotIntakePos(m_ArmSubsystem2, ArmConstants.MIN_SETPOINT));
+      RedWorldsEventMap.put("RWslurp", new CubeSlurp(m_intakeSubsystem, IntakeConstants.AUTO_SLURP_SPEED));
+      RedWorldsEventMap.put("RWraisepivot", new PivotStartPos(m_ArmSubsystem2, ArmConstants.MAX_SETPOINT));
+      RedWorldsEventMap.put("RWscoringpos", new PivotScoringPos(m_ArmSubsystem2, ArmConstants.SCORING_SETPOINT));
+      RedWorldsEventMap.put("RWraisepivot2", new PivotStartPos(m_ArmSubsystem2, ArmConstants.MAX_SETPOINT));
+      RedWorldsEventMap.put("RWspit", new CubeSpit(m_intakeSubsystem, IntakeConstants.AUTO_SPIT_SPEED));
+
+      final HashMap<String, Command> ATeamWantedMeToMakeThisEventMap = new HashMap<>();
+      ATeamWantedMeToMakeThisEventMap.put("scoringpos", new PivotScoringPos(m_ArmSubsystem2, ArmConstants.SCORING_SETPOINT));
+      ATeamWantedMeToMakeThisEventMap.put("spit", new CubeSpit(m_intakeSubsystem, IntakeConstants.AUTO_SPIT_SPEED));
+      ATeamWantedMeToMakeThisEventMap.put("raisepivot", new PivotStartPos(m_ArmSubsystem2, ArmConstants.MAX_SETPOINT));
+
       // autoChooser.addOption("BackupAndBalance", AutoPathHelper.followPath(swerve, "BackupAndBalance", backupAndBalanceEventMap)
       // .andThen(new AutoBalance(swerve)));
 
@@ -230,13 +246,17 @@ public class RobotContainer {
 
       // autoChooser.addOption("BlueAuto", AutoPathHelper.followPath(swerve, "BlueAuto", BlueAutoEventMap));
 
-      autoChooser.addOption("TheOneThatWorks", AutoPathHelper.followPath(swerve, "TheOneThatWorks", BlueAutoCopyEventMap));
+      autoChooser.addOption("BlueWorlds", AutoPathHelper.followPath(swerve, "BlueWorlds", BlueAutoCopyEventMap));
 
       // autoChooser.addOption("RedChargeStation", AutoPathHelper.followPath(swerve, "RedChargeStation", RedChargeStationEventMap));
 
       // autoChooser.addOption("RedLeftWorlds", AutoPathHelper.followPath(swerve, "RedLeftWorlds", RedLeftWorldsEventMap));
 
       // autoChooser.addOption("RedRightWorlds", AutoPathHelper.followPath(swerve, "RedRightWorlds", RedRightWorldsEventMap));
+
+      autoChooser.addOption("RedWorlds", AutoPathHelper.followPath(swerve, "RedWorlds", RedWorldsEventMap));
+
+      autoChooser.addOption("ATeamWantedMeToMakeThis", AutoPathHelper.followPath(swerve, "ATeamWantedMeToMakeThis", ATeamWantedMeToMakeThisEventMap));
 
       SmartDashboard.putData(autoChooser);
   }

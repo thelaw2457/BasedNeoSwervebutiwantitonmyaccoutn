@@ -1,0 +1,186 @@
+{
+  "waypoints": [
+    {
+      "anchorPoint": {
+        "x": 2.0011332330356972,
+        "y": 0.92
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 3.0011332330356972,
+        "y": 0.92
+      },
+      "holonomicAngle": 0,
+      "isReversal": false,
+      "velOverride": null,
+      "isLocked": false,
+      "isStopPoint": false,
+      "stopEvent": {
+        "names": [],
+        "executionBehavior": "parallel",
+        "waitBehavior": "none",
+        "waitTime": 0
+      }
+    },
+    {
+      "anchorPoint": {
+        "x": 2.081067409998068,
+        "y": 0.9135334509985259
+      },
+      "prevControl": {
+        "x": 1.5317816102896367,
+        "y": 0.9135334509985259
+      },
+      "nextControl": {
+        "x": 2.630353209706501,
+        "y": 0.9135334509985259
+      },
+      "holonomicAngle": 0,
+      "isReversal": false,
+      "velOverride": null,
+      "isLocked": false,
+      "isStopPoint": false,
+      "stopEvent": {
+        "names": [],
+        "executionBehavior": "parallel",
+        "waitBehavior": "none",
+        "waitTime": 0
+      }
+    },
+    {
+      "anchorPoint": {
+        "x": 6.8200221870529205,
+        "y": 0.9363717872734894
+      },
+      "prevControl": {
+        "x": 7.271657144113691,
+        "y": 0.9363717872734894
+      },
+      "nextControl": {
+        "x": 7.271657144113691,
+        "y": 0.9363717872734894
+      },
+      "holonomicAngle": 0,
+      "isReversal": true,
+      "velOverride": null,
+      "isLocked": false,
+      "isStopPoint": false,
+      "stopEvent": {
+        "names": [],
+        "executionBehavior": "parallel",
+        "waitBehavior": "none",
+        "waitTime": 0
+      }
+    },
+    {
+      "anchorPoint": {
+        "x": 4.684637745343866,
+        "y": 0.6965692563863765
+      },
+      "prevControl": {
+        "x": 4.915875900127872,
+        "y": 0.6965692563863765
+      },
+      "nextControl": {
+        "x": 4.273547692394531,
+        "y": 0.6965692563863765
+      },
+      "holonomicAngle": 180.0,
+      "isReversal": false,
+      "velOverride": null,
+      "isLocked": false,
+      "isStopPoint": false,
+      "stopEvent": {
+        "names": [],
+        "executionBehavior": "parallel",
+        "waitBehavior": "none",
+        "waitTime": 0
+      }
+    },
+    {
+      "anchorPoint": {
+        "x": 2.046809905585623,
+        "y": 1.061982636785786
+      },
+      "prevControl": {
+        "x": 1.8184265428359916,
+        "y": 1.1751869725961668
+      },
+      "nextControl": {
+        "x": 2.5832081767439896,
+        "y": 0.796102454949216
+      },
+      "holonomicAngle": 180.0,
+      "isReversal": false,
+      "velOverride": null,
+      "isLocked": false,
+      "isStopPoint": false,
+      "stopEvent": {
+        "names": [],
+        "executionBehavior": "parallel",
+        "waitBehavior": "none",
+        "waitTime": 0
+      }
+    },
+    {
+      "anchorPoint": {
+        "x": 5.758039550267135,
+        "y": 0.9021142828610453
+      },
+      "prevControl": {
+        "x": 5.862239459521656,
+        "y": 0.9233359818856401
+      },
+      "nextControl": null,
+      "holonomicAngle": 180.0,
+      "isReversal": false,
+      "velOverride": null,
+      "isLocked": false,
+      "isStopPoint": false,
+      "stopEvent": {
+        "names": [],
+        "executionBehavior": "parallel",
+        "waitBehavior": "none",
+        "waitTime": 0
+      }
+    }
+  ],
+  "markers": [
+    {
+      "position": 1.3818181818181756,
+      "names": [
+        "BACslurp"
+      ]
+    },
+    {
+      "position": 3.7090909090907958,
+      "names": [
+        "BACspit"
+      ]
+    },
+    {
+      "position": 0.0,
+      "names": [
+        "BACinitspit"
+      ]
+    },
+    {
+      "position": 1.2727272727272725,
+      "names": [
+        "BAClowerpivot"
+      ]
+    },
+    {
+      "position": 2.1818181818181914,
+      "names": [
+        "BACraisepivot"
+      ]
+    },
+    {
+      "position": 3.45,
+      "names": [
+        "BACscoringpos"
+      ]
+    }
+  ]
+}
